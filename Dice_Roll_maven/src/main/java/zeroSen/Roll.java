@@ -28,7 +28,8 @@ public class Roll {
     }
 
     public Roll(MessageReceivedEvent e){
-        System.out.println(e.getMessage());
+        System.out.println("Received message (id: " + e.getMessage().getId() + ", author: " + e.getAuthor() +
+                ", content: " + e.getMessage().getContentRaw());
         this.event = e;
         this.message = e.getMessage().getContentRaw();
         results = new ArrayList<>();
@@ -93,9 +94,9 @@ public class Roll {
     }
     public String buildMessageToSend(){
         if(!error){
-            messageToSend.append(dices).append("d").append(diceType).append("\n");
+            messageToSend.append("**").append(dices).append("d").append(diceType).append("**").append("\n");
             if(event != null) messageToSend.append(" by ").append(event.getAuthor().getName()).append("\n");
-            messageToSend.append("Result: ").append(result).append("\n");
+            messageToSend.append("**Result: ").append(result).append("**").append("\n");
             messageToSend.append("Modifier: ");
             if(modifier > 0) messageToSend.append("+");
             messageToSend.append(modifier).append("\n");
