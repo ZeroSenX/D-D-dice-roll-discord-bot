@@ -114,6 +114,7 @@ public class Roll {
         }
         else messageToSend = new StringBuilder("Errore, codice sbagliato");
 
+        System.out.println(messageToSend);
         return messageToSend.toString();
     }
 
