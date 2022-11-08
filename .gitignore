@@ -26,5 +26,5 @@ hs_err_pid*
 .env
 *.env
 
-# directory of jar
-/out/
+# out directory
+out/
